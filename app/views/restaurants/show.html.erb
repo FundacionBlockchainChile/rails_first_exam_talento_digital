@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</h1>
+
+<div class="image_container">
+  <img src="<%= @restaurant.img %>"  class="big_image" alt="" srcset="">
+</div>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @restaurant.rating %>
+</p>
+
+<p>
+  <strong>Chef name:</strong>
+  <%= @restaurant.chef_name %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Reviews of Restaurant</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Restaurant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.content %></td>
+        <td><%= review.restaurant_id %></td>
+        <td><%= link_to 'Show', review %></td>
+        <td><%= link_to 'Edit', edit_review_path(review) %></td>
+        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Review', new_review_path %>
