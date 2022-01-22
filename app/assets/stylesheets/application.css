@@ -293,10 +293,22 @@ img {
   flex-direction: row;
   align-items: center;
   width: 100%;
+  background: none !important;
+  color: gray !important;
 }
 
-.nav_items h3:hover {
-  color: red;
+.nav_items h2 {
+  margin-right: 400px;
+}
+
+.nav_item {
+  background: none !important;
+  color: orange !important;
+}
+
+
+.nav_item:hover {
+  color: rgb(255, 72, 0) !important;
   cursor: pointer;
+  background: none !important;
 }
-
